@@ -23,13 +23,13 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:text="Username"
+        android:text="Fullname"
         android:layout_marginTop="25dp"
         android:textSize="20sp"/>
 
 
     <EditText
-        android:id="@+id/et_username"
+        android:id="@+id/et_fullname"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:textSize="18sp"
@@ -38,7 +38,8 @@
         android:textColor="#707070"
         android:ems="10"
         android:inputType="text"
-        android:hint="Enter your username"/>
+        android:background="@drawable/ic_p"
+        android:hint="Enter your fullname"/>
 
     <TextView
         android:id="@+id/lbl_email"
@@ -59,6 +60,7 @@
         android:textColor="#707070"
         android:hint="Enter your email"
         android:inputType="textEmailAddress"
+        android:background="@drawable/ic_p"
         android:textSize="18sp"
         android:padding="12dp"
         android:layout_marginTop="10dp"/>
@@ -81,6 +83,7 @@
         android:ems="10"
         android:textColor="#707070"
         android:hint="Enter your phone number"
+        android:background="@drawable/ic_p"
         android:textSize="18sp"
         android:padding="12dp"
         android:layout_marginTop="10dp"/>
@@ -106,7 +109,8 @@
         android:textColor="#707070"
         android:ems="10"
         android:inputType="textPassword"
-        android:hint="Enter your password"/>
+        android:hint="Enter your password"
+        android:background="@drawable/ic_p"/>
 
 
     <TextView
@@ -130,7 +134,8 @@
         android:textColor="#707070"
         android:ems="10"
         android:inputType="textPassword"
-        android:hint="Enter your password"/>
+        android:hint="Enter your password"
+        android:background="@drawable/ic_p"/>
 
     <TextView
         android:id="@+id/textViewLogin"
@@ -145,7 +150,9 @@
 
     <Button
         android:id="@+id/button_signup"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:background="@drawable/ic_p"
         android:layout_height="50dp"
         android:text="Sign Up"
         android:layout_marginTop="15dp">

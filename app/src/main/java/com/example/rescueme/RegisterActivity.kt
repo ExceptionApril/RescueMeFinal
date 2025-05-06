@@ -23,7 +23,7 @@ class RegisterActivity : Activity() {
         // Initialize Firebase Auth
         auth = Firebase.auth
 
-        val usernameEditText = findViewById<EditText>(R.id.et_username)
+        val usernameEditText = findViewById<EditText>(R.id.et_fullname)
         val passwordEditText = findViewById<EditText>(R.id.et_password)
         val emailEditText = findViewById<EditText>(R.id.et_email)
         val phoneEditText = findViewById<EditText>(R.id.et_phone)
