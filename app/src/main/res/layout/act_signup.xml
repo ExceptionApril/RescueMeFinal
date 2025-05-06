@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="30dp"
+    android:padding="15dp"
     android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="25dp"
         android:text="Sign Up"
         android:textColor="@color/black"
-        android:textSize="50sp"
-        android:textStyle="bold" />
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:paddingBottom="0dp"/>
 
     <TextView
         android:id="@+id/lbl_username"
@@ -59,6 +59,28 @@
         android:textColor="#707070"
         android:hint="Enter your email"
         android:inputType="textEmailAddress"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/lbl_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="Phone No."
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"/>
+
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:textColor="#707070"
+        android:hint="Enter your phone number"
         android:textSize="18sp"
         android:padding="12dp"
         android:layout_marginTop="10dp"/>
@@ -126,6 +148,6 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="Sign Up"
-        android:layout_marginTop="40dp">
+        android:layout_marginTop="15dp">
     </Button>
 </LinearLayout>

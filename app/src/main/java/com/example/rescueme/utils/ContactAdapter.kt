@@ -1,16 +1,24 @@
 package com.example.rescueme.utils
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.rescueme.ContactsActivity
 import com.example.rescueme.R
 
-class ContactAdapter(private val context: Context, private val contactList: List<Contact>) :
-    RecyclerView.Adapter<ContactAdapter.ContactViewHolder>() {
+class ContactAdapter(
+    private val context: ContactsActivity,
+    private var contactList: MutableList<Contact>,
+    private val onContactClick: (Contact) -> Unit
+) : RecyclerView.Adapter<ContactAdapter.ContactViewHolder>() {
+
+    fun updateContacts(newContacts: MutableList<Contact>) {
+        contactList = newContacts
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
         val itemView = LayoutInflater.from(parent.context)
@@ -20,20 +28,35 @@ class ContactAdapter(private val context: Context, private val contactList: List
 
     override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
         val contact = contactList[position]
-        holder.nameTextView.text = contact.name
-        holder.relationTextView.text = contact.relation
-        holder.profileImageView.setImageResource(contact.profileImageResourceId)
-        // You can add a click listener here if needed
+        holder.bind(contact)
+        
+        holder.itemView.setOnClickListener {
+            onContactClick(contact)
+        }
     }
 
-    override fun getItemCount(): Int {
-        return contactList.size
-    }
+    override fun getItemCount(): Int = contactList.size
 
     inner class ContactViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val profileImageView: ImageView = itemView.findViewById(R.id.profileImageView)
-        val nameTextView: TextView = itemView.findViewById(R.id.nameTextView)
-        val relationTextView: TextView = itemView.findViewById(R.id.relationTextView)
-        val arrowImageView: ImageView = itemView.findViewById(R.id.arrowImageView)
+        private val profileImageView: ImageView = itemView.findViewById(R.id.profileImageView)
+        private val nameTextView: TextView = itemView.findViewById(R.id.nameTextView)
+        private val relationTextView: TextView = itemView.findViewById(R.id.relationTextView)
+        private val phoneNumberTextView: TextView = itemView.findViewById(R.id.phoneNumberTextView)
+        private val serviceTypeTextView: TextView = itemView.findViewById(R.id.serviceTypeTextView)
+        private val arrowImageView: ImageView = itemView.findViewById(R.id.arrowImageView)
+
+        fun bind(contact: Contact) {
+            nameTextView.text = contact.name
+            relationTextView.text = contact.relation
+            phoneNumberTextView.text = contact.phoneNumber
+            profileImageView.setImageResource(contact.profileImageResourceId)
+            
+            if (contact.isEmergencyService) {
+                serviceTypeTextView.visibility = View.VISIBLE
+                serviceTypeTextView.text = contact.serviceType
+            } else {
+                serviceTypeTextView.visibility = View.GONE
+            }
+        }
     }
 }

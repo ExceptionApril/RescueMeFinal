@@ -1,5 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.RescueMe" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.RescueMe" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorSecondaryVariant">@color/accent_dark</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        
+        <!-- Font settings -->
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="textAppearanceHeadline1">@style/TextAppearance.RescueMe.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.RescueMe.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.RescueMe.Headline3</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.RescueMe.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.RescueMe.Body2</item>
+        <item name="textAppearanceLabelSmall">@style/TextAppearance.RescueMe.Nav</item>
+    </style>
+
+    <!-- Text Styles -->
+    <style name="TextAppearance.RescueMe.Nav" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+    </style>
+    <style name="TextAppearance.RescueMe.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+    <style name="TextAppearance.RescueMe.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+    <style name="TextAppearance.RescueMe.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+    <style name="TextAppearance.RescueMe.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+    </style>
+
+    <style name="TextAppearance.RescueMe.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+    </style>
+
 </resources>

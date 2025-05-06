@@ -10,15 +10,19 @@ import android.provider.MediaStore
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.Toast
-import android.app.Activity
+import androidx.appcompat.app.AppCompatActivity
 import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import android.Manifest
+import android.view.View
+import android.widget.TextView
 
-class ProfilePageActivity : Activity() {
+class ProfilePageActivity : AppCompatActivity() {
 
     private lateinit var profileIconImageView: ImageView
+    private lateinit var profileNameTextView: TextView
+    private lateinit var profileEmailTextView: TextView
 
     companion object {
         private const val PERMISSION_REQUEST_CODE = 100
@@ -29,45 +33,91 @@ class ProfilePageActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.act_profilepage)
 
+        // Initialize views
         profileIconImageView = findViewById(R.id.profile_icon)
-        val settingsArrow = findViewById<ImageView>(R.id.ic_arrow2)
-        val aboutUsArrow = findViewById<ImageView>(R.id.ic_arrow4)
-        val logoutArrow = findViewById<ImageView>(R.id.ic_arrow6)
-        val contactButton = findViewById<RelativeLayout>(R.id.contactButton)
-        val homeButton = findViewById<RelativeLayout>(R.id.homeButton)
+        profileNameTextView = findViewById(R.id.profile_name)
+        profileEmailTextView = findViewById(R.id.profile_email)
+
+        // Load user data from RescueMeApp
+        val app = RescueMeApp.getInstance()
+        profileNameTextView.text = app.getUserName()
+        profileEmailTextView.text = app.getUserEmail()
 
         // Check for permissions before opening the image chooser
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), PERMISSION_REQUEST_CODE)
         }
 
+        // Set up click listeners for menu items
+        setupMenuClickListeners()
+
+        // Set up bottom navigation
+        setupBottomNavigation()
+    }
+
+    private fun setupMenuClickListeners() {
+        // Personal Data
+        findViewById<View>(R.id.personal_data_card).setOnClickListener {
+            startActivity(Intent(this, PersonalDataActivity::class.java))
+        }
+
+        // Settings
+        findViewById<View>(R.id.settings_card).setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
+        }
+
+        // About Us
+        findViewById<View>(R.id.about_us_card).setOnClickListener {
+            startActivity(Intent(this, DevPageActivity::class.java))
+        }
+
+        // About App
+        findViewById<View>(R.id.about_app_card).setOnClickListener {
+            // TODO: Create AboutAppActivity
+            Toast.makeText(this, "About App screen will be implemented soon", Toast.LENGTH_SHORT).show()
+        }
+
+        // Logout
+        findViewById<View>(R.id.logout_card).setOnClickListener {
+            // Clear user data and return to login screen
+            val app = RescueMeApp.getInstance()
+            app.saveUserData("", "", "")
+            val intent = Intent(this, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            finish()
+        }
+
+        // Profile picture click
         profileIconImageView.setOnClickListener {
             openImageChooser()
         }
+    }
 
-        settingsArrow.setOnClickListener {
-            val intent = Intent(this, SettingsActivity::class.java)
-            startActivity(intent)
+    private fun setupBottomNavigation() {
+        findViewById<View>(R.id.homeButton).setOnClickListener {
+            startActivity(Intent(this, LandingActivity::class.java))
+            finish()
         }
 
-        aboutUsArrow.setOnClickListener {
-            val intent = Intent(this, DevPageActivity::class.java)
-            startActivity(intent)
+        findViewById<View>(R.id.profileButton).setOnClickListener {
+            startActivity(Intent(this, ProfilePageActivity::class.java))
+            finish()
         }
 
-        logoutArrow.setOnClickListener {
-            Toast.makeText(this, "Logout functionality will be implemented here", Toast.LENGTH_SHORT)
-                .show()
+        findViewById<View>(R.id.contactButton).setOnClickListener {
+            startActivity(Intent(this, ContactsActivity::class.java))
+            finish()
         }
 
-        contactButton.setOnClickListener {
-            val intent = Intent(this, ContactsActivity::class.java)
-            startActivity(intent)
+        findViewById<View>(R.id.emergencyButton).setOnClickListener {
+            startActivity(Intent(this, EmergencyActivity::class.java))
+            finish()
         }
 
-        homeButton.setOnClickListener {
-            val intent = Intent(this, LandingActivity::class.java)
-            startActivity(intent)
+        findViewById<View>(R.id.notificationsButton).setOnClickListener {
+            startActivity(Intent(this, NotificationsActivity::class.java))
+            finish()
         }
     }
 

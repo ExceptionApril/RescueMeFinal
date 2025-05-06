@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -16,20 +17,48 @@ class DevPageActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.act_developerpage)
 
-        val button_home = findViewById<ImageButton>(R.id.button_home)
-        button_home.setOnClickListener {
-            Log.e("This is CSIT284","Home button is clicked!")
-            Toast.makeText(this,"The home button is clicked!", Toast.LENGTH_LONG).show()
-            val intent = Intent(this,LandingActivity::class.java)
+
+        val backButton = findViewById<ImageView>(R.id.backButton)
+        backButton.setOnClickListener() {
+            val intent = Intent(this, ProfilePageActivity::class.java)
             startActivity(intent)
         }
 
-        val button_profile = findViewById<ImageButton>(R.id.button_profile)
-        button_profile.setOnClickListener {
-            Log.e("This is CSIT284","Settings button is clicked!")
-            Toast.makeText(this,"The Setting button is clicked!", Toast.LENGTH_LONG).show()
-            val intent = Intent(this,ProfilePageActivity::class.java)
+        val dev1Website = findViewById<ImageView>(R.id.dev1Website)
+        dev1Website.setOnClickListener {
+            val websiteUrl = "https://seeudev.me"
+            val intent = Intent(Intent.ACTION_VIEW, android.net.Uri.parse(websiteUrl))
             startActivity(intent)
         }
+
+        val dev1Github = findViewById<ImageView>(R.id.dev1Github)
+        dev1Github.setOnClickListener {
+            val githubUrl = "https://github.com/seeudev"
+            val intent = Intent(Intent.ACTION_VIEW, android.net.Uri.parse(githubUrl))
+            startActivity(intent)
+        }
+
+        val dev1Linkedin = findViewById<ImageView>(R.id.dev1Linkedin)
+        dev1Linkedin.setOnClickListener {
+            val linkedinUrl = "https://www.linkedin.com/in/christianharrypancito/"
+            val intent = Intent(Intent.ACTION_VIEW, android.net.Uri.parse(linkedinUrl))
+            startActivity(intent)
+        }
+
+        val dev1Facebook = findViewById<ImageView>(R.id.dev1Facebook)
+        dev1Facebook.setOnClickListener {
+            val facebookUrl = "https://www.facebook.com/smile.harrys13/" //
+            val intent = Intent(Intent.ACTION_VIEW, android.net.Uri.parse(facebookUrl))
+            startActivity(intent)
+        }
+
+        val dev2Github = findViewById<ImageView>(R.id.dev2Github)
+        dev2Github.setOnClickListener {
+            val githubUrl = "https://github.com/ExceptionApril/"
+            val intent = Intent(Intent.ACTION_VIEW, android.net.Uri.parse(githubUrl))
+            startActivity(intent)
+        }
+
+
     }
 }

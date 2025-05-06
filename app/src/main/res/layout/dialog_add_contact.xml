@@ -10,7 +10,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Name"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:maxLines="1" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        android:maxLines="1"
+        android:layout_marginTop="8dp" />
 
     <EditText
         android:id="@+id/editTextRelation"
@@ -18,6 +28,7 @@
         android:layout_height="wrap_content"
         android:hint="Relation (Optional)"
         android:inputType="text"
+        android:maxLines="1"
         android:layout_marginTop="8dp" />
 
 </LinearLayout>

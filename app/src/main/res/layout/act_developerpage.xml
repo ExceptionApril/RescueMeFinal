@@ -7,155 +7,207 @@
     android:backgroundTint="#FEFEFE"
     android:padding="5dp">
 
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:padding="15dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="MEET THE DEVELOPERS"
-            android:fontFamily="sans-serif-black"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            android:layout_gravity="left"
-            android:layout_marginBottom="0dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Welcome to the developer's page!"
-            android:fontFamily="sans-serif-condensed-light"
-            android:textStyle="italic"
-            android:layout_gravity="left"/>
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:elevation="4dp">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="114dp"
-            android:paddingTop="24dp"
-            android:layout_gravity="center"
-            android:src="@drawable/dev1" />
+            android:id="@+id/backButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="start|center_vertical"
+            android:src="@drawable/ic_back"
+            android:padding="4dp"
+            android:contentDescription="Back" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="11dp"
-            android:text="Christian Harry R. Pancito"
-            android:textSize="23sp"
+            android:text="Developer Page"
+            android:textAppearance="@style/TextAppearance.RescueMe.Headline1"
+            android:textColor="@color/black"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="4dp"
-            android:text="Developer"
-            android:textStyle="italic" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="4dp"
-            android:text="An experienced android developer with years of professional kotlin experience"
-            android:textStyle="normal" />
+    </androidx.appcompat.widget.Toolbar>
 
-
-        <ImageView
-            android:paddingTop="24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="114dp"
-            android:src="@drawable/circleavatar" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="11dp"
-            android:text="April John A. Sultan"
-            android:textSize="23sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="4dp"
-            android:text="Developer"
-            android:textStyle="italic" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="4dp"
-            android:text="An experienced android developer with years of professional kotlin experience"
-            android:textStyle="normal" />
-
-    </LinearLayout>
-
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="5"
-        android:background="@color/cardview_shadow_end_color">
-        <ImageButton
-            android:id="@+id/button_home"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:scaleType="fitCenter"
-            android:layout_weight="1"
-            android:src="@drawable/home"
-            android:onClick="clickNewHome"
-            android:clickable="true"
-            android:focusable="true"
-            />
-        <ImageButton
-            android:id="@+id/button_group"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:scaleType="fitCenter"
-            android:layout_weight="1"
-            android:src="@drawable/group"
-            android:onClick="clickNewGroup"
-            android:clickable="true"
-            android:focusable="true"
-            />
-        <ImageButton
-            android:id="@+id/button_contacts"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:scaleType="fitCenter"
-            android:layout_weight="1"
-            android:src="@drawable/calendar"
-            android:onClick="clickNewContacts"
-            android:clickable="true"
-            android:focusable="true"
-            />
-        <ImageButton
-            android:id="@+id/button_notification"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:scaleType="fitCenter"
-            android:layout_weight="1"
-            android:src="@drawable/notification"
-            android:onClick="clickNewNotification"
-            android:clickable="true"
-            android:focusable="true"
-            />
-        <ImageButton
-            android:id="@+id/button_profile"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:scaleType="fitCenter"
-            android:layout_weight="1"
-            android:src="@drawable/profile"
-            android:onClick="clickNewProfile"
-            android:clickable="true"
-            android:focusable="true"
-            />
-    </LinearLayout>
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- First Developer Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/dev1ProfilePic"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/ic_pancito_dev1"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Developer 1 Profile Picture" />
+
+                <TextView
+                    android:id="@+id/dev1Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Christian Harry R. Pancito"
+                    android:textAppearance="@style/TextAppearance.RescueMe.Headline1"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp" />
+
+                <TextView
+                    android:id="@+id/dev1Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Developer"
+                    android:textAppearance="@style/TextAppearance.RescueMe.Body1"
+                    android:textSize="18sp"
+                    android:textColor="@color/gray"
+                    android:layout_marginTop="4dp" />
+
+                <TextView
+                    android:id="@+id/dev1Bio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="I'm an IT Enthusiast based in the Philippines focused on building everything from web-based apps, and games. While I'm not building those I enjoy my freetime playing games or making videos on the side."
+                    android:textAppearance="@style/TextAppearance.RescueMe.Body1"
+                    android:textColor="@color/gray"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:layout_marginTop="16dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+
+                    <ImageView
+                        android:id="@+id/dev1Website"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:contentDescription="Website"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_web"
+                        android:layout_marginHorizontal="9dp"/>
+
+                    <ImageView
+                        android:id="@+id/dev1Github"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:contentDescription="GitHub"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_github"
+                        android:layout_marginHorizontal="9dp"/>
+                    <ImageView
+                        android:id="@+id/dev1Linkedin"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_linkedin"
+                        android:padding="4dp"
+                        android:contentDescription="Linkedin"
+                        android:layout_marginHorizontal="9dp"/>
+                    <ImageView
+                        android:id="@+id/dev1Facebook"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_facebook"
+                        android:padding="4dp"
+                        android:contentDescription="Facebook"
+                        android:layout_marginHorizontal="9dp"/>
+
+
+                    <!-- Add more social links here as needed -->
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray"
+                android:layout_marginVertical="16dp" />
+
+            <!-- Second Developer Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/dev2ProfilePic"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/ic_sultan_dev2"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Developer 2 Profile Picture" />
+
+                <TextView
+                    android:id="@+id/dev2Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="April John A. Sultan"
+                    android:textAppearance="@style/TextAppearance.RescueMe.Headline1"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp" />
+
+                <TextView
+                    android:id="@+id/dev2Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Developer"
+                    android:textAppearance="@style/TextAppearance.RescueMe.Body1"
+                    android:textSize="18sp"
+                    android:textColor="@color/gray"
+                    android:layout_marginTop="4dp" />
+
+                <TextView
+                    android:id="@+id/dev2Bio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Short bio about the developer goes here. This can be multiple lines of text describing their background and interests."
+                    android:textAppearance="@style/TextAppearance.RescueMe.Body1"
+                    android:textColor="@color/gray"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:layout_marginTop="16dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+
+                    <ImageView
+                        android:id="@+id/dev2Github"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_github"
+                        android:padding="4dp"
+                        android:contentDescription="GitHub" />
+
+                    <!-- Add more social links here as needed -->
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

@@ -17,23 +17,25 @@
             android:id="@+id/profileImageView"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/profile_image_1"
+            android:src="@drawable/ic_circleavatar"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_toEndOf="@+id/profileImageView"
+            android:layout_toStartOf="@+id/arrowImageView"
             android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:layout_centerVertical="true">
 
             <TextView
                 android:id="@+id/nameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="April John Sultan"
+                android:text="Name"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="#212121" />
@@ -42,19 +44,40 @@
                 android:id="@+id/relationTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Brother"
+                android:text="Relation"
                 android:textSize="14sp"
                 android:textColor="#757575" />
+
+            <TextView
+                android:id="@+id/phoneNumberTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+63 999999999"
+                android:textSize="14sp"
+                android:textColor="#757575"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:id="@+id/serviceTypeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Emergency Service"
+                android:textSize="12sp"
+                android:textColor="#FF0000"
+                android:textStyle="bold"
+                android:visibility="gone"
+                android:layout_marginTop="2dp" />
 
         </LinearLayout>
 
         <ImageView
             android:id="@+id/arrowImageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_right"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_right_arrow"
             app:tint="#757575" />
 
     </RelativeLayout>

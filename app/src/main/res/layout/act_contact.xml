@@ -14,6 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:text="Contacts"
+        android:fontFamily="@font/montserrat_bold"
         android:textSize="28sp"
         android:textStyle="bold"
         android:textColor="#212121" />
@@ -27,6 +28,7 @@
         android:layout_marginTop="22dp"
         android:layout_marginEnd="16dp"
         android:text="Add +"
+        android:fontFamily="@font/montserrat_bold"
         android:textSize="16sp"
         android:textColor="@color/red" />
 
@@ -43,29 +45,33 @@
         android:padding="8dp">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="22sp"
+            android:layout_height="22sp"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="8dp"
             android:src="@drawable/ic_search"
             app:tint="#757575" />
 
         <EditText
-            android:layout_width="0dp"
+            android:id="@+id/searchEditText"
+            android:layout_width="275dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_weight="1"
-            android:hint="Search"
+            android:background="@android:color/transparent"
+            android:ellipsize="end"
             android:gravity="center"
-            android:textSize="16sp"
+            android:hint="Search"
+            android:inputType="text"
+            android:scrollHorizontally="true"
             android:textColor="#424242"
             android:textColorHint="#757575"
-            android:background="@android:color/transparent"
-            android:layout_marginStart="8dp" />
+            android:textSize="22sp" />
 
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewContacts"
+        android:id="@+id/contactsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/searchBar"
@@ -107,6 +113,7 @@
                     android:textColor="#FFFFFF"
                     android:textSize="12sp"
                     android:layout_below="@+id/homeIcon"
+                    android:textAppearance="@style/TextAppearance.RescueMe.Nav"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="4dp" />
             </RelativeLayout>
@@ -133,6 +140,7 @@
                     android:textColor="#FFFFFF"
                     android:textSize="12sp"
                     android:layout_below="@+id/contactIcon"
+                    android:textAppearance="@style/TextAppearance.RescueMe.Nav"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="4dp" />
             </RelativeLayout>
@@ -159,6 +167,7 @@
                     android:textColor="#FFFFFF"
                     android:textSize="12sp"
                     android:layout_below="@+id/emergencyIcon"
+                    android:textAppearance="@style/TextAppearance.RescueMe.Nav"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="4dp" />
             </RelativeLayout>
@@ -185,6 +194,7 @@
                     android:textSize="11sp"
                     android:textColor="#FFFFFF"
                     android:layout_below="@+id/notificationsIcon"
+                    android:textAppearance="@style/TextAppearance.RescueMe.Nav"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="4dp" />
             </RelativeLayout>
@@ -211,6 +221,7 @@
                     android:textColor="#FFFFFF"
                     android:textSize="12sp"
                     android:layout_below="@+id/profileIcon"
+                    android:textAppearance="@style/TextAppearance.RescueMe.Nav"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="4dp" />
             </RelativeLayout>

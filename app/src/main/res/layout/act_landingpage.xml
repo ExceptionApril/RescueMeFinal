@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:text="Emergency help needed?"
+        android:textAppearance="@style/TextAppearance.RescueMe.Headline1"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@android:color/black"
@@ -22,8 +23,18 @@
         android:layout_height="300dp"
         android:layout_below="@+id/textViewEmergencyHelp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/ic_sos"
         android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/panicButton"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:background="@color/panic_button_colors"
+            android:text="SOS"
+            android:textSize="64sp"
+            android:textColor="#FFFFFF"
+            android:stateListAnimator="@null" />
     </RelativeLayout>
 
     <HorizontalScrollView
@@ -432,6 +443,7 @@
                     android:textColor="#FFFFFF"
                     android:textSize="12sp"
                     android:layout_below="@+id/homeIcon"
+                    android:textAppearance="@style/TextAppearance.RescueMe.Nav"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="4dp" />
             </RelativeLayout>
@@ -458,6 +470,7 @@
                     android:textColor="#FFFFFF"
                     android:textSize="12sp"
                     android:layout_below="@+id/contactIcon"
+                    android:textAppearance="@style/TextAppearance.RescueMe.Nav"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="4dp" />
             </RelativeLayout>
@@ -484,6 +497,7 @@
                     android:textColor="#FFFFFF"
                     android:textSize="12sp"
                     android:layout_below="@+id/emergencyIcon"
+                    android:textAppearance="@style/TextAppearance.RescueMe.Nav"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="4dp" />
             </RelativeLayout>
@@ -510,6 +524,7 @@
                     android:textSize="11sp"
                     android:textColor="#FFFFFF"
                     android:layout_below="@+id/notificationsIcon"
+                    android:textAppearance="@style/TextAppearance.RescueMe.Nav"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="4dp" />
             </RelativeLayout>
@@ -536,6 +551,7 @@
                     android:textColor="#FFFFFF"
                     android:textSize="12sp"
                     android:layout_below="@+id/profileIcon"
+                    android:textAppearance="@style/TextAppearance.RescueMe.Nav"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="4dp" />
             </RelativeLayout>
