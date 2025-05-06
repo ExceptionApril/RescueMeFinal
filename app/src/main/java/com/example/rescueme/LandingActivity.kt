@@ -20,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.appcompat.app.AlertDialog
+import androidx.cardview.widget.CardView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -95,6 +96,13 @@ class LandingActivity : AppCompatActivity() {
             Toast.makeText(this, "The Emergency button is clicked!", Toast.LENGTH_LONG).show()
             startActivity(Intent(this, EmergencyActivity::class.java))
         }
+        // Find the CardView for Bleeding
+        val cardViewBleeding = findViewById<CardView>(R.id.cardViewBleeding)
+        cardViewBleeding.setOnClickListener {
+            Log.e("LandingActivity", "Bleeding CardView clicked!")
+            Toast.makeText(this, "Going to Bleeding Activity", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, BleedingActivity::class.java))
+        }
     }
 
     private fun checkLocationPermission(): Boolean {
@@ -126,6 +134,7 @@ class LandingActivity : AppCompatActivity() {
             }
         }
     }
+
 
     private fun showConfirmationDialog() {
         try {
