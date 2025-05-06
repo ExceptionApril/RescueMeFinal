@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="41dp"
+        android:layout_height="21dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="23dp"
+        android:paddingRight="16dp"
+        android:src="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/back_button"
+        android:layout_centerVertical="@id/back_button"
+        android:layout_marginStart="113dp"
+        android:layout_marginLeft="113dp"
+        android:layout_marginTop="-4dp"
+        android:layout_toEndOf="@id/back_button"
+        android:layout_toRightOf="@id/back_button"
+        android:text="Bleeding"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/steps_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Steps"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_below="@id/back_button"
+        android:layout_marginTop="16dp" />
+
+    <RelativeLayout
+        android:id="@+id/step1_layout"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/steps_title"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/ic_b"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/icon1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="16dp"
+            android:src="@drawable/one" />
+
+        <TextView
+            android:id="@+id/step1_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/icon1"
+            android:text="Apply direct pressure quickly"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/step2_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ic_b"
+        android:padding="12dp"
+        android:layout_below="@id/step1_layout">
+
+        <ImageView
+            android:id="@+id/icon2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/two"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="16dp" />
+
+        <TextView
+            android:id="@+id/step2_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/icon2"
+            android:text="Raise and restrict movement of the injured limb"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_centerVertical="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/step3_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ic_b"
+        android:padding="12dp"
+        android:layout_below="@id/step2_layout">
+
+        <ImageView
+            android:id="@+id/icon3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/three"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="16dp" />
+
+        <TextView
+            android:id="@+id/step3_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/icon3"
+            android:text="Bandage pad firmly in place"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_centerVertical="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/step4_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ic_b"
+        android:padding="12dp"
+        android:layout_below="@id/step3_layout">
+
+        <ImageView
+            android:id="@+id/icon4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/four"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="16dp" />
+
+        <TextView
+            android:id="@+id/step4_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/icon4"
+            android:text="Do not remove or cut foreign body"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_centerVertical="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/step5_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ic_b"
+        android:padding="12dp"
+        android:layout_below="@id/step4_layout">
+
+        <ImageView
+            android:id="@+id/icon5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/five"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="16dp" />
+
+        <TextView
+            android:id="@+id/step5_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/icon5"
+            android:text="Apply additional pad if leaking"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_centerVertical="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/step6_layout"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/step5_layout"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ic_b"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/icon6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="16dp"
+            android:src="@drawable/six" />
+
+        <TextView
+            android:id="@+id/step6_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/icon6"
+            android:text="Reassure the victim"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/step7_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ic_b"
+        android:padding="12dp"
+        android:layout_below="@id/step6_layout">
+
+        <ImageView
+            android:id="@+id/icon7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/seven"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="16dp" />
+
+        <TextView
+            android:id="@+id/step7_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/icon7"
+            android:text="Seek medical assistance"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_centerVertical="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
