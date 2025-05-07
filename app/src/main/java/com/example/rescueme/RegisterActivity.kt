@@ -70,7 +70,7 @@ class RegisterActivity : Activity() {
                                     "phone" to enteredPhone,
                                     "createdAt" to System.currentTimeMillis()
                                 )
-                                
+
                                 // First ensure we're authenticated
                                 if (auth.currentUser != null) {
                                     userReference.setValue(userMap)
@@ -78,7 +78,7 @@ class RegisterActivity : Activity() {
                                             // Save user data to RescueMeApp
                                             val app = RescueMeApp.getInstance()
                                             app.saveUserData(enteredUsername, enteredEmail, enteredPhone, userId)
-                                            
+
                                             Toast.makeText(this, "User Registered!", Toast.LENGTH_SHORT).show()
                                             val intent = Intent(this, LoginActivity::class.java)
                                             startActivity(intent)

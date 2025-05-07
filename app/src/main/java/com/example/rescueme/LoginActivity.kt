@@ -88,7 +88,7 @@ class LoginActivity : AppCompatActivity() {
 
                                                 // Login success
                                                 Toast.makeText(this@LoginActivity, "Login successful!", Toast.LENGTH_SHORT).show()
-                                                
+
                                                 val intent = if (!hasEmergencyContact) {
                                                     Log.d(TAG, "Navigating to InitialSetupActivity")
                                                     Intent(this@LoginActivity, InitialSetupActivity::class.java)
